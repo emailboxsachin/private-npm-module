@@ -1,0 +1,1 @@
+console.log('this module will export stuff from "foo"')
