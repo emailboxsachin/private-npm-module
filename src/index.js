@@ -1,1 +1,1 @@
-console.log('sachin's private npm module')
+console.log('sachins private npm module')
