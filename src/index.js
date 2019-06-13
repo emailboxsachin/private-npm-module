@@ -1,1 +1,1 @@
-console.log('this module will export stuff from "foo"')
+console.log('sachin's private npm module')
