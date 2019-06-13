@@ -1,1 +1,3 @@
-console.log('sachins private npm module.. 1.3.0')
+exports.printMsg = function() {
+    console.log('sachins private npm module.. 1.3.0')
+}
