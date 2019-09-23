@@ -1,3 +1,3 @@
 module.exports={
-    eventPublisher = require('./publisher'),
+    SqsWriter: require('./lib/sqs-writer.js')
 }
