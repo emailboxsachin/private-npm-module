@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config()
-const SqsHandler = require('./sqsHandler')
+const SqsHandler = require('./sqs-handler')
 
 
 function Event(name, source, event_data) {
