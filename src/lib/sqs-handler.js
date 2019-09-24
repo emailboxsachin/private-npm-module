@@ -2,26 +2,23 @@ var AWS = require('aws-sdk');
 const dotenv = require('dotenv');
 dotenv.config();
 
+var sqs = new AWS.SQS({
+    apiVersion: process.env.APIVERSION,
+    region: process.env.REGION
+});
 
-function SqsHandler(name, source, event_data) {
+function SqsHandler() {
     var self = this; 
-    self._name = name
-    self._source = source
-    self._event_data = event_data
-    self.sqs = new AWS.SQS({
-        apiVersion: process.env.APIVERSION,
-        region: process.env.REGION
-    });
 }
 
-SqsHandler.prototype.push = function(){
+SqsHandler.prototype.push = function(name,source,event_data){
     var params = {
         DelaySeconds: process.env.DELAYSECONDS,
-        MessageBody: self._event_data,
+        MessageBody: event_data,
         QueueUrl: process.env.QUEUEURL
     };
     return new Promise(function(fulfill, reject) {
-        self.sqs.sendMessage(params, function(err, data) {
+        sqs.sendMessage(params, function(err, data) {
             if (err) {
                 reject(err);
             } else {

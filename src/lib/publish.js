@@ -5,8 +5,8 @@ function Publisher() {
 }
 
 Publisher.prototype.publishEvent = function(name, source, event_data){
-    const event = new Event(name, source, event_data);
-    event.push()
+    const event = new Event();
+    event.push(name, source, event_data)
     
 }
 

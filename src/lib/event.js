@@ -3,16 +3,13 @@ dotenv.config()
 const SqsHandler = require('./sqs-handler')
 
 
-function Event(name, source, event_data) {
+function Event() {
     var self = this
-    self._name = name
-    self._source = source
-    self._event_data = event_data
 }
 
-Event.prototype.push = function(){
-    const queue = new SqsHandler(self._name,self._source,self._event_data);
-    queue.push();
+Event.prototype.push = function(name, source, event_data){
+    const queue = new SqsHandler();
+    queue.push(name,source,event_data);
 }
 
 module.exports = Event;
