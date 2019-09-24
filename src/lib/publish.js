@@ -1,4 +1,4 @@
-const Event = require('./event')
+const Event = require('../event/event')
 
 function Publisher() {
     var self = this;
