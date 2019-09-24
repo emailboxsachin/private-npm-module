@@ -12,6 +12,7 @@ function SqsHandler() {
 }
 
 SqsHandler.prototype.push = function(name,source,event_data){
+    console.log('sqs-handler.push called')
     var params = {
         DelaySeconds: process.env.DELAYSECONDS,
         MessageBody: event_data,
